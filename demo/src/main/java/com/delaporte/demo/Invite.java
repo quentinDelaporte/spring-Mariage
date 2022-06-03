@@ -1,10 +1,12 @@
 package com.delaporte.demo;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 @Data
+@Builder
 public class Invite {
     @Schema(description = "Identifiant de l'invite'", example = "1")
     @Id
@@ -21,28 +23,4 @@ public class Invite {
     private boolean presentRepas;
     @Schema(description = "Plat choisi", example = "Boeuf")
     private String platChoisi;
-
-
-    public String getId() {
-        return id;
-    }
-    public String getNom() {
-        return nom;
-    }
-    public String getPrenom() {
-        return prenom;
-    }
-    public boolean getPresentCeremonie() {
-        return presentCeremonie;
-    }
-    public boolean getPresentVinHonneur() {
-        return presentVinHonneur;
-    }
-    public boolean getPresentRepas() {
-        return presentRepas;
-    }
-    public String getPlatChoisi() {
-        return platChoisi;
-    }
-
 }
